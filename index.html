@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#2563eb">
+  <title>OBIS Cloud | منصة نظم المعلومات</title>
+  <meta name="description" content="منصة طلابية مستقلة لطلاب قسم نظم المعلومات">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#home" aria-label="OBIS Cloud الرئيسية"><span class="logo">O</span><span><b>OBIS</b> Cloud</span></a>
+  <button id="menuBtn" class="menu-btn" aria-label="فتح القائمة">☰</button>
+  <nav id="nav">
+    <a class="active" href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+    <a href="#courses" data-ar="المقررات" data-en="Courses">المقررات</a>
+    <a href="#calendar" data-ar="التقويم" data-en="Calendar">التقويم</a>
+    <a href="#links" data-ar="روابط مهمة" data-en="Links">روابط مهمة</a>
+    <a href="#schedule" data-ar="إنشاء جدول" data-en="Schedule">إنشاء جدول</a>
+  </nav>
+  <button id="langBtn" class="icon-btn lang-btn" title="تغيير اللغة">EN</button>
+  <button id="themeBtn" class="icon-btn" title="الوضع الليلي">◐</button>
+</header>
+<main id="home">
+  <section class="hero">
+    <div class="hero-content">
+      <span class="eyebrow">منصة طلابية مستقلة</span>
+      <h1>مرحبًا بك في <span>OBIS Cloud</span></h1>
+      <p>محاضراتك، سكاشنك، وجدولك في مكان واحد لطلاب قسم نظم المعلومات.</p>
+      <div class="hero-actions"><a class="btn primary" href="#courses">استعرض المقررات</a><a class="btn secondary" href="#schedule">أنشئ جدولك</a></div>
+    </div>
+    <div class="hero-card">
+      <div class="cloud">☁</div>
+      <div class="dhikr-box"><small>ذِكر</small><strong id="dhikrText">سُبْحَانَ اللهِ</strong></div>
+      <h2>About the Designer</h2>
+      <p>Designed &amp; Developed by Omar El-Nahas</p>
+    </div>
+  </section>
+  <section id="courses" class="section">
+    <div class="section-title"><span>ابدأ من هنا</span><h2>اختر السنة الدراسية</h2><p>اختر السنة ثم الترم لعرض المقررات والملفات.</p></div>
+    <div id="yearsGrid" class="years-grid"></div>
+  </section>
+  <section id="termPanel" class="section panel hidden">
+    <button id="closePanel" class="close">×</button>
+    <div class="section-title"><span id="selectedYearLabel"></span><h2>اختر الترم</h2></div>
+    <div class="terms">
+      <button class="term-card" data-term="1"><span>01</span><h3>الترم الأول</h3><p>عرض مقررات الفصل الدراسي الأول</p></button>
+      <button class="term-card" data-term="2"><span>02</span><h3>الترم الثاني</h3><p>عرض مقررات الفصل الدراسي الثاني</p></button>
+    </div>
+    <div id="subjects" class="subjects hidden"></div>
+  </section>
+  <section id="subjectPage" class="section subject-page hidden">
+    <button id="backToSubjects" class="btn secondary back-btn">← الرجوع للمواد</button>
+    <div class="section-title"><span id="subjectMeta"></span><h2 id="subjectTitle">اسم المادة</h2><p>اختر القسم المطلوب لعرض محتوى المادة.</p></div>
+    <div id="materialTabs" class="material-tabs" role="tablist"></div>
+    <div id="materialContent" class="material-content"></div>
+  </section>
+  <section id="calendar" class="section soft"><div class="section-title"><span>نظّم وقتك</span><h2>التقويم الدراسي</h2></div><div class="empty-card"><div>📅</div><h3>لا توجد أحداث مضافة بعد</h3><p>يمكن إضافة مواعيد المحاضرات والاختبارات مستقبلًا.</p></div></section>
+  <section id="links" class="section"><div class="section-title"><span>وصول سريع</span><h2>روابط مهمة</h2></div><div class="links-grid"><a href="#" class="link-card"><span>🎓</span><b>بوابة الطالب</b><small>أضف الرابط الرسمي هنا</small></a><a href="#" class="link-card"><span>📚</span><b>المكتبة الرقمية</b><small>مصادر ومراجع تعليمية</small></a><a href="#" class="link-card"><span>📢</span><b>الإعلانات</b><small>آخر أخبار القسم</small></a></div></section>
+  <section id="schedule" class="section soft"><div class="section-title"><span>جدولك الخاص</span><h2>إنشاء جدول دراسي</h2><p>أضف موادك ومواعيدها، وسيتم حفظها على جهازك.</p></div><form id="scheduleForm" class="schedule-form"><input id="subjectInput" required placeholder="اسم المادة"><select id="dayInput"><option>السبت</option><option>الأحد</option><option>الاثنين</option><option>الثلاثاء</option><option>الأربعاء</option><option>الخميس</option></select><input id="timeInput" type="time" required><button class="btn primary" type="submit">إضافة للجدول</button></form><div id="scheduleList" class="schedule-list"></div></section>
+</main>
+<footer><b>OBIS Cloud</b><p>منصة طلابية مستقلة لتنظيم المواد الدراسية.</p><small>© <span id="yearNow"></span> Omar El-Nahas</small></footer>
+<script src="app.js"></script>
+<script src="adhkar.js"></script>
+</body>
+</html>
