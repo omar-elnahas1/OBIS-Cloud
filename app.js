@@ -27,8 +27,16 @@ document.querySelectorAll('.term-card').forEach(c=>c.onclick=()=>{
     subjects.classList.remove('hidden');
     return;
   }
-  subjects.innerHTML='<h3>مقررات الترم الأول</h3>'+firstYearSubjects[1].map(x=>`<div class="subject-row"><i>📘</i><b>${x}</b><button onclick="alert('افتح النسخة الكاملة لعرض أقسام المادة')">فتح المادة</button></div>`).join('');
+  subjects.innerHTML='<h3>مقررات الترم الأول</h3>'+firstYearSubjects[1].map(x=>`<div class="subject-row"><i>📘</i><b>${x}</b><button class="open-subject" data-subject="${x}">فتح المادة</button></div>`).join('');
   subjects.classList.remove('hidden');
+  subjects.querySelectorAll('.open-subject').forEach(btn=>btn.onclick=()=>{
+    const subject=btn.dataset.subject;
+    if(subject==='محاسبة مالية'){
+      window.location.href='course.html?subject=accounting';
+    }else{
+      alert('سيتم إضافة محتوى هذه المادة قريبًا');
+    }
+  });
 });
 document.getElementById('closePanel').onclick=()=>document.getElementById('termPanel').classList.add('hidden');
 document.getElementById('menuBtn').onclick=()=>document.getElementById('nav').classList.toggle('open');

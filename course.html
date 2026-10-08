@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#2563eb">
+  <title>محاسبة مالية | OBIS Cloud</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .course-shell{min-height:100vh;background:radial-gradient(circle at 88% 25%,rgba(6,182,212,.10),transparent 28%),radial-gradient(circle at 12% 55%,rgba(37,99,235,.08),transparent 26%),var(--bg)}
+    .course-main{max-width:1100px;margin:auto;padding:46px 24px 90px}.course-back{display:inline-flex;gap:9px;align-items:center;color:var(--muted);font-weight:700;margin-bottom:30px}.course-head{text-align:center}.course-code{display:inline-block;padding:6px 15px;border-radius:99px;background:#dceeff;color:var(--primary);font-weight:800;font-size:13px}.course-head h1{font-size:42px;margin:16px 0 8px}.course-head p{color:var(--muted);font-size:16px}.offline-btn{margin-top:15px;border:0;border-radius:13px;padding:12px 18px;background:#e8ebf0;color:var(--ink);font:700 14px Cairo;cursor:pointer}.course-tabs-wrap{display:flex;align-items:center;gap:10px;margin:40px auto 0}.share-btn{flex:0 0 46px;width:46px;height:46px;border:0;border-radius:14px;background:#edf1f6;font-size:20px;cursor:pointer}.course-tabs{flex:1;display:flex;gap:6px;overflow-x:auto;padding:6px 8px 16px;background:#edf1f6;border-radius:17px;box-shadow:inset 0 -9px 0 #c5cbd5;scrollbar-width:thin}.course-tab{border:0;background:transparent;color:#6c778c;padding:12px 20px;border-radius:14px;white-space:nowrap;font:700 14px Cairo;cursor:pointer}.course-tab.active{background:#fff;color:#111827;box-shadow:0 5px 18px rgba(15,23,42,.08)}.course-content{margin:55px auto 0;max-width:900px}.file-card{display:flex;align-items:center;gap:16px;padding:20px;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}.file-icon{font-size:36px}.file-info{flex:1}.file-info h3{margin:0 0 5px}.file-info p{margin:0;color:var(--muted);font-size:13px}.file-actions{display:flex;gap:9px}.file-actions a{padding:10px 14px;border-radius:10px;font-weight:800;font-size:13px}.view-file{background:var(--primary);color:#fff}.download-file{background:#eaf2ff;color:var(--primary)}.empty-course{text-align:center;color:var(--muted);padding:50px}.dark .course-tabs,.dark .share-btn,.dark .offline-btn{background:#16263b}.dark .course-tab.active{background:#eef4ff;color:#10213d}@media(max-width:650px){.course-main{padding:30px 14px 70px}.course-head h1{font-size:31px}.course-tabs-wrap{align-items:flex-start}.file-card{align-items:flex-start;flex-wrap:wrap}.file-actions{width:100%}.file-actions a{flex:1;text-align:center}}
+  </style>
+</head>
+<body class="course-shell">
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="logo">O</span><span><b>OBIS</b> Cloud</span></a>
+  <button id="menuBtn" class="menu-btn" aria-label="فتح القائمة">☰</button>
+  <nav id="nav"><a href="index.html">الرئيسية</a><a class="active" href="index.html#courses">المقررات</a><a href="index.html#calendar">التقويم</a><a href="index.html#links">روابط مهمة</a><a href="index.html#schedule">إنشاء جدول</a></nav>
+  <button id="themeBtn" class="icon-btn">◐</button>
+</header>
+<main class="course-main">
+  <a class="course-back" href="index.html#courses">← العودة للمقررات</a>
+  <section class="course-head"><span class="course-code">الفرقة الأولى • الترم الأول</span><h1>محاسبة مالية</h1><p>المحاضرات والسكاشن والتكليفات والمراجعات الخاصة بالمادة.</p><button class="offline-btn" id="offlineBtn">⇩ حفظ المقرر أوفلاين</button></section>
+  <div class="course-tabs-wrap"><button class="share-btn" id="shareBtn">⌯</button><div class="course-tabs" id="courseTabs"></div></div>
+  <section class="course-content" id="courseContent"></section>
+</main>
+<script src="course.js"></script>
+</body>
+</html>
